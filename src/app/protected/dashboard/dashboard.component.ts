@@ -1,16 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styles: [
-  ]
+    `
+      * {
+        margin: 15px;
+      }
+
+      button {
+        background-color: lightcoral;
+        padding: 10px;
+        border-radius: 10px;
+      }
+    `,
+  ],
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
+  constructor(private router: Router) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  logout() {
+    this.router.navigateByUrl('/auth');
   }
-
 }
