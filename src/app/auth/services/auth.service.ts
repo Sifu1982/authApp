@@ -52,7 +52,7 @@ export class AuthService {
 
     return this.http.get<AuthResponse>(url, { headers }).pipe(
       map((resp) => {
-        console.log(resp.token);
+        // console.log(resp.token);
 
         localStorage.setItem('token', resp.token!);
         this._usuario = {
@@ -64,5 +64,9 @@ export class AuthService {
       }),
       catchError((err) => of(false))
     );
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }
