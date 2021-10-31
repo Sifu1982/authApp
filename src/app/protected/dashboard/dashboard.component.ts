@@ -16,6 +16,10 @@ import { AuthService } from '../../auth/services/auth.service';
         padding: 10px;
         border-radius: 10px;
       }
+
+      button:hover {
+        background-color: tomato;
+      }
     `,
   ],
 })
