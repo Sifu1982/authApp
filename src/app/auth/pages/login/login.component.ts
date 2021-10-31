@@ -33,15 +33,12 @@ export class LoginComponent {
   login() {
     console.log(this.miFormulario.value);
     // console.log(this.miFormulario.valid);
-
     const { email, password } = this.miFormulario.value;
-
     this.authService.login(email, password).subscribe((ok) => {
-      console.log(ok);
+      // console.log(ok);
       if (ok === true) {
         this.router.navigateByUrl('/dashboard');
       } else {
-        //TODO: mostrar mensaje de error
         Swal.fire({
           icon: 'error',
           title: 'Error',
